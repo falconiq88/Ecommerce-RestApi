@@ -44,14 +44,16 @@ class ProductsController extends Controller
 
             ])){
             $images = $request['image'];
-
-            foreach ($images as  $image) {
-
-                Image::create([
-                    'url'=>$image,
-                    'product_id'=>$product->id
-                ]);
-            }
+            $imageName = '';
+                foreach ($images as  $image) {
+                    $new_name = rand() . '.' . $image->getClientOriginalExtension();
+                    $image->move(public_path('/uploads/product_images/'), $new_name);
+                    $imageName = $new_name;
+                    Image::create([
+                        'url' => asset('uploads/product_images/' . $imageName),
+                        'product_id' => $product->id
+                    ]);
+                }
             return response([
                 'message' => 'product has been created'
 
