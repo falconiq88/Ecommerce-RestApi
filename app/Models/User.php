@@ -103,7 +103,7 @@ class User extends Authenticatable
 
         $http = new \GuzzleHttp\Client(['headers' => [
             'Centent-Type' => 'application/json',
-            'Authorization' => 'key=AAAAZhXHAQo:APA91bHJRPm8oJCgP0FAffIEj0kR7o49Y4c3hjHGjdgW6bgkmSiNH7pDLZ6b9GVBKrwYO49zqBcj0wwHVVDpKW0X2S8pP4hH4LdVhVY5KAiLHc8j-LDswTsQ6EKPvDf9yNVnSdyl3luu'
+            'Authorization' => ''
 
         ]]);
         try {
